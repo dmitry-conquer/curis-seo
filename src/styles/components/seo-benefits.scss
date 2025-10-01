@@ -1,0 +1,52 @@
+@use "../helpers" as *;
+
+.seo-benefits {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(12, 24);
+  }
+
+  &__item {
+    padding-block: rem(16);
+    display: flex;
+    justify-content: space-between;
+    gap: rem(8) rem(40);
+    border-bottom: rem(1) solid rgba(255, 255, 255, 0.5);
+
+    @include medium {
+      flex-direction: column;
+    }
+  }
+
+  &__item-title {
+    font-size: fluid(20, 26);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    flex: 0 1 rem(438);
+
+    @include medium {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__item-description {
+    flex: 0 1 rem(780);
+
+    @include medium {
+      flex: 0 1 auto;
+    }
+  }
+}
