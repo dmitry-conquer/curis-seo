@@ -1,0 +1,121 @@
+@use "../helpers" as *;
+
+.seo-faq {
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    gap: rem(24);
+    align-items: flex-start;
+
+    @include medium {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__image {
+    flex: 0 0 50%;
+
+    @include medium {
+      flex: 0 1 auto;
+
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(16, 24);
+    padding-right: rem(20);
+
+    @include medium {
+      padding-right: 0;
+    }
+  }
+
+  &__accordion-item {
+    border-radius: rem(10);
+    background: rgba(38, 27, 151, 0.05);
+    padding: fluid(24, 40);
+  }
+
+  &__accordion-button {
+    color: var(--secondary-color);
+    font-size: fluid(19, 24);
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(30);
+    width: 100%;
+    text-align: left;
+
+    &.is-active {
+      .seo-faq__accordion-button-icon {
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%222%22%20viewBox%3D%220%200%2016%202%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M15%200H1a1%201%200%200%200%200%202h14a1%201%200%201%200%200-2%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E");
+        }
+      }
+    }
+  }
+
+  &__accordion-button-icon {
+    flex-shrink: 0;
+    position: relative;
+    width: fluid(40, 52);
+    height: fluid(40, 52);
+    border-radius: 50%;
+    border: rem(1) solid #333;
+    background: linear-gradient(275deg, #261b97 0.79%, #b13af9 92.67%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M15%206.994H9v-6a1%201%200%200%200-2%200v6H1a1%201%200%200%200%200%202h6v6a1%201%200%201%200%202%200v-6h6a1%201%200%201%200%200-2%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E");
+      width: rem(16);
+      height: rem(16);
+      transition: background-image 0.3s ease;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &__accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    &.is-active {
+      max-height: 100%;
+    }
+  }
+
+  &__accordion-content-inner {
+    padding-top: fluid(16, 30);
+    margin-top: fluid(16, 30);
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: rem(1);
+      top: 0;
+      left: 0;
+      background: linear-gradient(275deg, #261b97 0.79%, #b13af9 92.67%);
+    }
+  }
+}
