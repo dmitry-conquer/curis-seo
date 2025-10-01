@@ -1,0 +1,35 @@
+@use "../helpers" as *;
+
+.seo-cta {
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: fluid(20, 154);
+
+    @include small {
+      flex-direction: column-reverse;
+      row-gap: rem(24);
+    }
+  }
+
+  &__image {
+    flex: 0 0 41%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding-right: rem(20);
+  }
+
+  &__title {
+  }
+
+  &__button {
+    margin-top: fluid(24, 36);
+  }
+}

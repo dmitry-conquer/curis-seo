@@ -1,0 +1,68 @@
+@use "../helpers" as *;
+
+.seo-services {
+  background-color: var(--secondary-color);
+  position: relative;
+
+  &__dots {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: rem(48);
+    left: 0;
+
+    @include small {
+      display: none;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid(16, 24);
+
+    @include small {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    padding: fluid(24, 32);
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: fluid(16, 28);
+
+    @include medium {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include small {
+      flex-direction: column;
+    }
+  }
+
+  &__item-icon {
+    flex: 0 0 rem(80);
+  }
+
+  &__item-title {
+    color: #fff;
+    font-size: fluid(20, 26);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: rem(16);
+  }
+
+  &__item-description {
+    color: #fff;
+    font-size: fluid(16, 18);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}

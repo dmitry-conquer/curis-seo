@@ -1,0 +1,118 @@
+@use "helpers" as *;
+@use "reset";
+@use "components" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rozha+One&display=swap");
+
+.seo-page {
+  --accent-color: #dc0061;
+  --secondary-color: #261b97;
+  --text-color: #707070;
+  --container-width: #{rem(1400)};
+
+  font-family: "Roboto", sans-serif;
+}
+
+.seo-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 rem(20);
+}
+
+.seo-right-container {
+  padding-right: calc((100% - var(--container-width)) / 2);
+
+  @include medium {
+    padding: 0 rem(20);
+    max-width: 100%;
+  }
+}
+
+.seo-left-container {
+  padding-left: calc((100% - var(--container-width)) / 2);
+
+  @include medium {
+    padding: 0 rem(20);
+    max-width: 100%;
+  }
+}
+
+.seo-button {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(18) rem(32);
+  padding: fluid(14, 18) fluid(24, 32);
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: fluid(18, 22);
+  border-radius: rem(50);
+  text-align: center;
+  line-height: 1.2;
+  transition: all 0.2s ease;
+  border: rem(1) solid var(--accent-color);
+
+  @include hover {
+    background-color: #fff;
+    color: var(--accent-color);
+  }
+
+  @include medium {
+    border-radius: rem(32);
+  }
+
+  @include x-small {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.seo-title {
+  color: #fff;
+  font-family: "Rozha One", serif;
+  line-height: 1;
+  margin-bottom: fluid(24, 60);
+  font-size: fluid(32, 60);
+
+  @include small {
+    br {
+      display: none;
+    }
+  }
+
+  &--main {
+    font-size: fluid(38, 74);
+    margin-bottom: rem(14);
+  }
+  &--gradient {
+    background: linear-gradient(275deg, #261b97 0.79%, #b13af9 92.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.seo-text {
+  p,
+  li {
+    color: var(--text-color);
+    font-size: fluid(16, 20);
+    line-height: 1.5;
+
+    &:not(:last-of-type) {
+      margin-bottom: fluid(12, 16);
+    }
+  }
+
+  &--lg {
+    p,
+    li {
+      font-size: fluid(18, 24);
+    }
+  }
+}
+
+.seo-section {
+  padding-block: fluid(40, 80);
+}
