@@ -36,7 +36,8 @@
     line-height: 1.1;
     color: #fff;
     flex: 0 1 rem(438);
-
+    font-family: "Roboto", sans-serif;
+    
     @include medium {
       flex: 0 1 auto;
     }
